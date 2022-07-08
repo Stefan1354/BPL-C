@@ -62,7 +62,7 @@ int n1, n2, n3;
    for(i=num; i>=60; i-=60){
        j += 1;
    }
-   if(i <= 10){
+   if(i<=10){
        printf("%d:0%d", j, i);
    }
    else{
