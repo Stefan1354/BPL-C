@@ -14,6 +14,6 @@ int main()
     a += b; //a=8 b=3
     b = a - b; //a=8 b=5
     a -= b;  //a=3 b=5
-    printf("a = %d,b = %d", a, b);
+    printf("a = %d, b = %d", a, b);
     return 0;
 }
