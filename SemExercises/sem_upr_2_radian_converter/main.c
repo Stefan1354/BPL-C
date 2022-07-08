@@ -12,10 +12,10 @@ int main()
     printf("Enter degrees: ");
     scanf("%f", &deg);
 
-    rad=deg*M_PI/100;
+    rad = deg*M_PI / 100;
 
     printf("Degrees to Radians Converter\n");
     printf("Degrees\t\Radians\n");
-    printf("%.1f\t%f",deg,rad);
+    printf("%.1f\t%f", deg, rad);
     return 0;
 }
