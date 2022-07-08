@@ -11,8 +11,7 @@ int main()
     scanf("%d", &a);
     scanf("%d", &b);
     scanf("%d", &c);
-
-
+    
     min = a;
     if (b<min){
         min = b;
@@ -20,9 +19,7 @@ int main()
     if(c<min){
         min = c;
     }
-
     printf("%d is the smallest number ", min);
-
     return 0;
 }
 
