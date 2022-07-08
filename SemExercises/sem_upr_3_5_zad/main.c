@@ -21,7 +21,7 @@ void calc_time(int s1, int s2, int s3)
     minutes = sum /60;
     seconds = sum % 60;
 
-    if (seconds > 10)
+    if (seconds>10)
     {
         printf("%d:%d", minutes, seconds);
     }
