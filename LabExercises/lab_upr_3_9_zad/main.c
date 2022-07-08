@@ -3,6 +3,7 @@
 //Стъпката на обхождане е 0.01.
 
 #include <stdio.h>
+#include <stdlib.h>
 
 //1 nacin
 
@@ -35,9 +36,6 @@ int main()
 
 
 //2 nacin
-
-#include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
