@@ -25,13 +25,13 @@
 
 int main()
 {
-    int row=0;
-    int col=0;
-    int totalRows=10;
+    int row = 0;
+    int col = 0;
+    int totalRows = 10;
 
-    for (row=1;row<=totalRows;row++)
+    for (row=1; row<=totalRows; row++)
     {
-        for (col=1;col<=row;col++)
+        for (col=1; col<=row; col++)
         {
             printf("* ");
         }
