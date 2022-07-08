@@ -46,25 +46,27 @@ int main()
 
 //second way
 
-int n1, n2, n3;
-   int num, i, j;
-   printf("Time one: ");
-   scanf("%d", &n1);
-   printf("Time two: ");
-   scanf("%d", &n2);
-   printf("Time three: ");
-   scanf("%d", &n3);
+int main() 
+{
+    int n1, n2, n3;
+    int num, i, j;
+    printf("Time one: ");
+    scanf("%d", &n1);
+    printf("Time two: ");
+    scanf("%d", &n2);
+    printf("Time three: ");
+    scanf("%d", &n3);
 
+    num = n1 + n2 + n3;
+    j = 0;
 
-   num = n1 + n2 + n3;
-   j = 0;
-
-   for(i=num; i>=60; i-=60){
-       j += 1;
-   }
-   if(i<=10){
-       printf("%d:0%d", j, i);
-   }
-   else{
+    for(i=num; i>=60; i-=60){
+        j += 1;
+    }
+    if(i<=10){
+        printf("%d:0%d", j, i);
+    }
+    else{
        printf("%d:%d", j, i);
-   }
+    }
+}
