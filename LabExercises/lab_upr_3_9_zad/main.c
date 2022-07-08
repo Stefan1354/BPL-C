@@ -5,34 +5,34 @@
 #include <stdio.h>
 
 //1 nacin
+
 int main()
 {
     double first;
-	scanf("%lf", &first);
-	double second;
-	scanf("%lf", &second);
+    scanf("%lf", &first);
+    double second;
+    scanf("%lf", &second);
 
-	if (first > second)
+    if (first > second)
+    {
+	double a = first;
+	first = second;
+	second = a;
+    }
+    if (first == second)
+    {
+	return 1;
+    }
+
+//   for (double i = first+0.01; i < second; i+=0.01)
+     for (double i = first; i <= second; i+=0.01)
 	{
-		double a = first;
-		first = second;
-		second = a;
+	    double num = i * i - 4;
+	    printf("%.2lf\n", num);
 	}
-	if (first == second)
-	{
-		return 1;
-	}
-
-//	for (double i = first+0.01; i < second; i+=0.01)
-     	for (double i = first; i <= second; i+=0.01)
-
-	{
-		double num = i * i - 4;
-		printf("%.2lf\n", num);
-	}
-
     return 0;
 }
+
 
 //2 nacin
 
@@ -46,7 +46,7 @@ int main()
     scanf("%f", &a);
     scanf("%f", &b);
 
-    if (a < b) {
+    if (a<b) {
         for (float i = a; i <= b; i+=0.01)
         {
             float exp;
@@ -56,7 +56,3 @@ int main()
     }
     return 0;
 }
-
-
-
-
