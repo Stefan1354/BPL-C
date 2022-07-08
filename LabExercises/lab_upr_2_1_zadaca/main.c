@@ -11,7 +11,7 @@ int main()
     scanf("%d", &a);
     printf("Input b: ");
     scanf("%d", &b);
-    area=a*b;
+    area = a * b;
     printf("%d*%d=%d", a, b, area);
     return 0;
 }
