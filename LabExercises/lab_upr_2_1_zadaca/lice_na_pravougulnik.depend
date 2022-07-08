@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1645093185 source:c:\users\admin\desktop\bpe - c\demos\lice_na_pravougulnik\main.c
+	<stdio.h>
+	<stdlib.h>
+
