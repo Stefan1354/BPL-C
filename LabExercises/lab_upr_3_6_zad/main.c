@@ -37,7 +37,7 @@ if (a<b){
     }
 }
 
-printf("Sum of even number is %d\n", sum);
-printf("Mult of odd number is %d\n", mult);
+printf("Sum of the even numbers is %d\n", sum);
+printf("Mult of the odd numbers is %d\n", mult);
 return 0;
 }
