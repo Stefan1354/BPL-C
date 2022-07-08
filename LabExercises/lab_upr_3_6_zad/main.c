@@ -9,32 +9,31 @@ int main(){
 
 int a, b;
 printf("Enter a,b: ");
-int sum=0;
-int mult=1;
+int sum = 0;
+int mult = 1;
 scanf("%d %d", &a, &b);
 
 if (a>b){
     for (int i=a-1; i>b; i--){
         if (i%2==0){
-            sum+=i;
+            sum += i;
         }
         else
             {
-                 mult*=i;
+                 mult *= i;
             }
         }
     }
-
 
 if (a<b){
     for (int i=a+1; i<b; i++){
         if (i%2==0)
         {
-            sum+=i;
+            sum += i;
         }
         else
         {
-            mult*=i;
+            mult *= i;
         }
     }
 }
@@ -43,5 +42,3 @@ printf("Sum of even number is %d\n", sum);
 printf("Mult of odd number is %d\n", mult);
 return 0;
 }
-
-
