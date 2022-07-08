@@ -9,16 +9,16 @@ int main()
     printf("Enter a character: ");
 	scanf("%c", &symbol);
 
-	for (int i = 0; i < 10; i++)
+	for (int i=0; i<10; i++)
 	{
 		printf("%c", symbol);
 	}
 	printf("\n");
-	for (int b = 0; b < 3; b++)
+	for (int b=0; b<3; b++)
 	{
-		for (int i = 0; i < 10; i++)
+		for (int i=0; i<10; i++)
 		{
-			if (i == 0 || i == 9)
+			if (i==0 || i==9)
 			{
 				printf("%c", symbol);
 			}
@@ -29,7 +29,7 @@ int main()
 		}
 		printf("\n");
 	}
-	for (int i = 0; i < 10; i++)
+	for (int i=0; i<10; i++)
 	{
 		printf("%c", symbol);
 	}
