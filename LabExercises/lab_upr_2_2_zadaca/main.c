@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 
-//2. Write a program that will exchange the places of 2 values entered from the keyboard
+//2. Write a program that will exchange the places of 2 values entered from the keyboard.
 
 int main()
 {
