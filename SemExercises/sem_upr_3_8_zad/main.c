@@ -15,8 +15,8 @@ int main()
     int n, sum;
     printf("Enter a number: ");
     scanf("%d", &n);
-    sum = t1*n + t2*n;
-    if(sum<=vol){
+    sum = t1 * n + t2 * n;
+    if(sum <= vol){
         printf("The pool has %d out of %d liters water in it", sum, vol);
     }
     else{
