@@ -12,33 +12,33 @@ int main()
 {
     int f=1;
     int num = 0;
-    float p1,p2,p3,p4,p5;
-    int count=0;
-    while(f!=0){
+    float p1, p2, p3, p4, p5;
+    int count = 0;
+    while(f != 0){
         printf("Enter a number: ");
         scanf("%d", &num);
         if(num == 0){
             break;
         }
         if(num <= 200){
-            p1+=1;
-            count+=1;
+            p1 += 1;
+            count += 1;
         }
-        else if(num>200 && num<400){
-            p2+=1;
-            count+=1;
+        else if(num > 200 && num < 400){
+            p2 += 1;
+            count += 1;
         }
-        else if(num>=400 && num<600){
-            p3+=1;
-            count+=1;
+        else if(num >= 400 && num < 600){
+            p3 += 1;
+            count += 1;
         }
-        else if(num>=600 && num<800){
-            p4+=1;
-            count+=1;
+        else if(num >= 600 && num < 800){
+            p4 += 1;
+            count += 1;
         }
-        else if(num>=800 && num<=1000){
-            p5+=1;
-            count+=1;
+        else if(num >= 800 && num <= 1000){
+            p5 += 1;
+            count += 1;
         }
     }
     printf("P1 = %.2f%%\n", p1/count*100);
