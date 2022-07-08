@@ -68,7 +68,7 @@ int main()
     printf("Km = ");
     scanf("%d", &km);
 
-    printf("\ntime (D or N)");
+    printf("\ntime (D or N) ");
     scanf(" %c", &time);
 
     lowestPrice(km, time);
