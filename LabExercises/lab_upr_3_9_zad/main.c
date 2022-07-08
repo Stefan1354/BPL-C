@@ -13,19 +13,19 @@ int main()
     double second;
     scanf("%lf", &second);
 
-    if (first > second)
+    if (first>second)
     {
 	double a = first;
 	first = second;
 	second = a;
     }
-    if (first == second)
+    if (first==second)
     {
 	return 1;
     }
 
 //   for (double i = first+0.01; i < second; i+=0.01)
-     for (double i = first; i <= second; i+=0.01)
+     for (double i=first; i<=second; i+=0.01)
 	{
 	    double num = i * i - 4;
 	    printf("%.2lf\n", num);
@@ -47,7 +47,7 @@ int main()
     scanf("%f", &b);
 
     if (a<b) {
-        for (float i = a; i <= b; i+=0.01)
+        for (float i=a; i<=b; i+=0.01)
         {
             float exp;
             exp = i*i - 4;
