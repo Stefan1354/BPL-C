@@ -17,7 +17,7 @@ int main()
     printf("How much he earns per day? ");
     scanf("%d", &M);
 
-    earn = M*N*12;
+    earn = M * N * 12;
     avg_profit_per_day = (earn - earn*25/100) / 365;
     in_levs = avg_profit_per_day * 1.72;
 
