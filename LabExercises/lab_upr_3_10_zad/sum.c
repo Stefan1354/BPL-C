@@ -10,21 +10,21 @@
 
 
 int main(){
-    int a,b;
-    int sum=0;
+    int a, b;
+    int sum = 0;
     scanf("%d %d", &a, &b);
 
 if (a>b){
-    for (int i=a-1;i>b;i--){
-        sum=sum+i;
-        }
+    for (int i=a-1; i>b; i--){
+        sum = sum + i;
     }
+}
 
- if (a<b){
-    for (int i=a+1;i<b;i++){
-        sum+=i;
-        }
+if (a<b){
+   for (int i=a+1; i<b; i++){
+       sum += i;
     }
-printf("Sum is %d",sum);
+}
+printf("Sum is %d", sum);
 return 0;
 }
