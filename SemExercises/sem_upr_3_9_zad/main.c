@@ -30,8 +30,8 @@ int main()
     printf("Enter goal: ");
     scanf("%d", &goal);
 
-    wine = (vol*grape)/2.5;
-    q = (vol*grape)*0.4;
+    wine = (vol*grape) / 2.5;
+    q = (vol*grape) * 0.4;
 
 
     if(wine>=goal){
