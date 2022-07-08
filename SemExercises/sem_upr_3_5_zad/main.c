@@ -38,7 +38,7 @@ int main()
     scanf("%d", &s2);
     scanf("%d", &s3);
 
-    calc_time(s1,s2,s3);
+    calc_time(s1, s2, s3);
     return 0;
 }
 
@@ -56,13 +56,13 @@ int main()
 //    scanf("%d", &n3);
 //
 //
-//    num = n1+n2+n3;
-//    j=0;
+//    num = n1 + n2 + n3;
+//    j = 0;
 //
 //    for(i=num; i>=60; i-=60){
-//        j+=1;
+//        j += 1;
 //    }
-//    if(i<=10){
+//    if(i <= 10){
 //        printf("%d:0%d", j, i);
 //    }
 //    else{
