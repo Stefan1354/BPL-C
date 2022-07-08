@@ -25,22 +25,22 @@ void lowestPrice(int km, char time)
 
     if (km > 100)
     {
-        train = km*0.06;
+        train = km * 0.06;
     }
 
     if (km > 20)
     {
-        bus = km*0.09;
+        bus = km * 0.09;
     }
 
-    taxi = km*0.70;
+    taxi = km * 0.70;
     if (time == "D")
     {
-        taxi += km*0.79;
+        taxi += km * 0.79;
     }
     else
     {
-        taxi += km*0.90;
+        taxi += km * 0.90;
     }
 
     float min;
@@ -89,31 +89,31 @@ int main()
     printf("Enter day/night: ");
     scanf(" %c", &dn);
     if(dn=='d'){
-        taxi=0.7+0.79*km;
+        taxi = 0.7 + 0.79 * km;
     }
     else if(dn=='n'){
-        taxi=0.7+0.9*km;
+        taxi = 0.7 + 0.9 * km;
     }
     else
         printf("Invalid input");
 
-    if(km>20 && km<100){
-        bus=0.09*km;
+    if(km > 20 && km < 100){
+        bus = 0.09 * km;
     }
-    else if(km>100){
-        bus=0.09*km;
-        train=0.06*km;
+    else if(km > 100){
+        bus = 0.09 * km;
+        train = 0.06 * km;
     }
 
 
-    if(km<20){
-        printf("The cheapest transport is taxi for %.2f",taxi);
+    if(km < 20){
+        printf("The cheapest transport is taxi for %.2f", taxi);
     }
-    else if(km>20 && km<100){
-        printf("The cheapest transport is bus for %.2f",bus);
+    else if(km > 20 && km < 100){
+        printf("The cheapest transport is bus for %.2f", bus);
     }
-    else if(km>100)
-        printf("The cheapest transport is train for %.2f",train);
+    else if(km > 100)
+        printf("The cheapest transport is train for %.2f", train);
 
 //third way
 
@@ -126,19 +126,19 @@ int main()
     scanf(" %c", &c);
 
     if(c == 'D' && n >= 20){
-        printf("Taxi: %f\n", 0.70+n*0.79);
-        printf("Bus: %f\n", n*0.09);
+        printf("Taxi: %f\n", 0.70 + n * 0.79);
+        printf("Bus: %f\n", n * 0.09);
 
     }
     if(c=='D' && n >=100){
-        printf("Train: %f\n", n*0.06);
+        printf("Train: %f\n", n * 0.06);
 
     }
-    if(c=='N' && n>=20){
-        printf("Taxi: %f\n", 0.70+n*0.79);
-        printf("Bus: %f\n", n*0.09);
+    if(c=='N' && n >= 20){
+        printf("Taxi: %f\n", 0.70 + n * 0.79);
+        printf("Bus: %f\n", n * 0.09);
     }
-    if(c=='N' && n >=100){
-        printf("Train: %f\n", n*0.06);
+    if(c=='N' && n >= 100){
+        printf("Train: %f\n", n * 0.06);
 
     }
