@@ -69,4 +69,5 @@ int main()
     else{
        printf("%d:%d", j, i);
     }
+    return 0;
 }
