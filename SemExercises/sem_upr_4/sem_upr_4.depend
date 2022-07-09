@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1648322130 source:c:\users\admin\desktop\bpe - c\seminarni_uprajneniq\sem_upr_4\main.c
+	<stdio.h>
+	<stdlib.h>
+
