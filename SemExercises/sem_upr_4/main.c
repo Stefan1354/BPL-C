@@ -257,7 +257,7 @@ int main()
    scanf("%d", &k);
    if (k>n)
    {
-       printf("please put in a lower value of k");
+       printf("Please put in a lower value of k: ");
        scanf("%d", &k);
    }
    printf("The k=%d size element is %d", k, b[k-1]);
@@ -276,7 +276,8 @@ int main()
 
    int arr[size];
    printf("Enter array values: \n");
-   for(i=0; i<size; i++){
+   for(i=0; i<size; i++)
+   {
        scanf("%d", &arr[i]);
    }
 
