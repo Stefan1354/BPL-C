@@ -1,6 +1,6 @@
 //3. Дадена е матрица NxM запълнена с цели числа. Разменете редовете с най-голям и най-малък елемент.
 
-include <stdio.h>
+#include <stdio.h>
 
 int Num_small(int n, int k, int arr[n][k]);
 int Num_big(int n, int k, int arr[n][k]);
