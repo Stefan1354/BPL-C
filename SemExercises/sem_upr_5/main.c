@@ -121,9 +121,6 @@ int main()
        {
            if(arr[cow][row]>arr[cow][row+1])
                printf("Arr[%d] is decreasing! \n", cow);
-
-
-
        }
 
    }
