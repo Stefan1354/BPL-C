@@ -101,7 +101,8 @@
    {
        table_diff = (guest - table_diff)/8;
        printf("You need %g more tables\n", ceil(table_diff));
-   }else
+   }
+   else
        printf("");
 
    if(cups < guest)
