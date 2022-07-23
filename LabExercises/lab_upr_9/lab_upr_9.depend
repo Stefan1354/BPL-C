@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1649882107 source:c:\users\admin\desktop\bpe - c\laboratorni_uprajneniq\lab_upr_9\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
