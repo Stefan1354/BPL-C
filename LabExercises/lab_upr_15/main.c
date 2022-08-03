@@ -9,57 +9,57 @@
 //Vavedenata informaciq za vseki ot obektite se zapisva vuv tekstov fail. Prochita se informaciqta ot faila i se zapisva vuv masiv ot tip struktura
 //telefonen ukazatel. Izvejda se sudurzanieto na masiva.
 
-//struct Phone
-//{
-//    char name[20];
-//    int code;
-//    char number[20];
-//
-//} *phone;
-//
-//int main()
-//{
-//    FILE *fp;
-//    fp = fopen("phones.txt", "w");
-//
-//    int num;
-//    int i = 0;
-//    phone = (struct Phone*) malloc(sizeof(struct Phone));
-//    while(1)
-//    {
-//        fflush(stdin);
-//        printf("Enter name: ");
-//        scanf("%s", phone->name);
-//        printf("Enter code: ");
-//        scanf("%d", &phone->code);
-//        printf("Enter number: ");
-//        scanf("%s", phone->number);
-//        fprintf(fp, "%s %d %s\n", phone->name, phone->code, phone->number);
-//        i++;
-//        printf("Enter 0 to stop: ");
-//        scanf("%d", &num);
-//        if (num == 0)
-//            break;
-//    }
-//    fclose(fp);
-//
-//    fp = fopen("phones.txt", "r");
-//    struct Phone array[i];
-//    int j = 0;
-//    while (!feof(fp))
-//    {
-//        fscanf(fp, "%s %d %s\n", array[j].name, &array[j].code, array[j].number);
-//        if (j < i)
-//            j++;
-//    }
-//
-//    for (i = 0; i < j; i++)
-//        printf("%s %d %s\n", array[i].name, array[i].code, array[i].number);
-//    free(phone);
-//    fclose(fp);
-//
-//    return 0;
-//}
+struct Phone
+{
+   char name[20];
+   int code;
+   char number[20];
+
+} *phone;
+
+int main()
+{
+   FILE *fp;
+   fp = fopen("phones.txt", "w");
+
+   int num;
+   int i = 0;
+   phone = (struct Phone*) malloc(sizeof(struct Phone));
+   while(1)
+   {
+       fflush(stdin);
+       printf("Enter name: ");
+       scanf("%s", phone->name);
+       printf("Enter code: ");
+       scanf("%d", &phone->code);
+       printf("Enter number: ");
+       scanf("%s", phone->number);
+       fprintf(fp, "%s %d %s\n", phone->name, phone->code, phone->number);
+       i++;
+       printf("Enter 0 to stop: ");
+       scanf("%d", &num);
+       if (num == 0)
+           break;
+   }
+   fclose(fp);
+
+   fp = fopen("phones.txt", "r");
+   struct Phone array[i];
+   int j = 0;
+   while (!feof(fp))
+   {
+       fscanf(fp, "%s %d %s\n", array[j].name, &array[j].code, array[j].number);
+       if (j<i)
+           j++;
+   }
+
+   for (i=0; i<j; i++)
+       printf("%s %d %s\n", array[i].name, array[i].code, array[i].number);
+   free(phone);
+   fclose(fp);
+
+   return 0;
+}
 
 
 //2. Da se sustavi programa, koqto sazdava dvoichen fail sus zapisi, predstavlqvashti danni za strudnik vuv firma.
@@ -72,8 +72,6 @@
 //za izvezdane na izchislenata sedmichna zaplata na ekrana.Pri izcislqvane na rabotnata zaplata e neobhodimo da se znae, che vseki izvanreden chas, koeto e
 //nad 40 chasa sedmichno, se zaplashta 150%, a stoinostta na dancite e 3.6% ot obshtata zarabotka.
 
-
-// 2.
 
 struct Colabolator
 {
@@ -102,7 +100,7 @@ int main()
     printf("Enter number of collaborators: ");
     scanf("%d", &n);
 
-    for (i = 0; i < n; i++)
+    for (i=0; i<n; i++)
     {
         printf("Colaborator No.%d:\n", i+1);
         fflush(stdin);
@@ -184,7 +182,7 @@ void append(int n)
 void weekly_salary_neto(int n)
 {
     float gross, net;
-    for (int i = 0; i < n; i++)
+    for (int i=0; i<n; i++)
     {
         if (collabs[i].hours_per_week > 40)
         {
