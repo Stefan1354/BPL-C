@@ -14,87 +14,87 @@
 //възможност за печат на данните от файла на конзолата.
 
 
-//typedef struct
-//{
-//    char brand[16];
-//    char model[16];
-//    int engine_capacity;
-//    double price;
-//    char registration;
-//
-//}CarDealership;
-//
-//int main()
-//{
-//    int n;
-//    printf("Enter number of cars: ");
-//    scanf("%d", &n);
-//    CarDealership *car = (CarDealership*)malloc(n*sizeof(CarDealership));
-//
-//    FILE *fp;
-//    fp = fopen("cars.txt", "w"); //файлът трябва да завършва с .txt или с .bin, зависи от режима дали е w/r или wb/rb (в този случай "cars.txt" трябва да е), иначе ще излизат грешки
-//    if(fp==NULL)
-//    {
-//        printf("ERROR: ");
-//        exit(1);
-//    }
-//    for(int i=0; i<n; i++)
-//    {
-//        printf("Enter %d. car: \n", i+1);
-//        printf("Enter brand of car: ");
-//        scanf("%s", car[i].brand);
-//        printf("Enter model of car: ");
-//        scanf("%s", car[i].model);
-//        printf("Enter engine capacity: ");
-//        scanf("%d", &car[i].engine_capacity);
-//        printf("Enter price: ");
-//        scanf("%lf", &car[i].price);
-//        fflush(stdin);
-//        printf("Enter Y (YES) or N (NO) for registration: ");
-//        scanf("%c", &car[i].registration);
-//        printf("\n");
-//        fprintf(fp, "%s %s %d %g %c\n", car[i].brand, car[i].model, car[i].engine_capacity, car[i].price, car[i].registration); //тук може би грешно ти ги е записвало, тъй като с оня запис май си добавил тия плюсове към адреса, не към стойността на адреса. тоя запис с cars[i] е по-лесен и по няма да имаш грешки.
-//    }
-//    fclose(fp);
-//
-//    fp = fopen("cars.txt", "a");
-//    char oper[5];
-//    printf("Do you want to add new car in car dealership? ");
-//    scanf("%s", oper);
-//    if (strcmp(oper, "YES") == 0)
-//    {
-//        n++; //добавям 1 към n, защото добавяме нова кола тук. така n ще ни е действителният брой коли.
-//        car = (CarDealership*)realloc(car, sizeof(CarDealership) *n);
-//        printf("Enter brand of car: ");
-//        scanf("%s", car[n - 1].brand); //правя car[n - 1], защото искам да заделя тези стойности за последния елемент.
-//        printf("Enter model of car: ");
-//        scanf("%s", car[n - 1].model);
-//        printf("Enter engine capacity: ");
-//        scanf("%d", &car[n - 1].engine_capacity);
-//        printf("Enter price: ");
-//        scanf("%lf", &car[n - 1].price);
-//        fflush(stdin);
-//        printf("Enter Y (YES) or N (NO) for registration: ");
-//        scanf("%c", &car[n - 1].registration);
-//        fprintf(fp, "%s %s %d %g %c\n", car[n - 1].brand, car[n - 1].model, car[n - 1].engine_capacity, car[n - 1].price, car[n - 1].registration);
-//    }
-//    fclose(fp);
-//
-//    fp = fopen("cars.txt", "r");
-//    if(fp==NULL)
-//        exit(2);
-//
-//
-//    for(int i=0; i<n; i++)
-//    {
-//        //сега като n го увеличихме с 1, всички записи ще излязат на екрана
-//        fscanf(fp, "%s %s %d %lf %c\n", car[i].brand, car[i].model, &car[i].engine_capacity, &car[i].price, &car[i].registration);
-//        printf("%s %s %d %0.2lf %c\n", car[i].brand, car[i].model, car[i].engine_capacity, car[i].price, car[i].registration); //car[i] записът няма да те подведе никога. този запис е много по-удобен, също.
-//    }
-//    free(car);
-//
-//    return 0;
-//}
+typedef struct
+{
+   char brand[16];
+   char model[16];
+   int engine_capacity;
+   double price;
+   char registration;
+
+}CarDealership;
+
+int main()
+{
+   int n;
+   printf("Enter number of cars: ");
+   scanf("%d", &n);
+   CarDealership *car = (CarDealership*)malloc(n*sizeof(CarDealership));
+
+   FILE *fp;
+   fp = fopen("cars.txt", "w"); //файлът трябва да завършва с .txt или с .bin, зависи от режима дали е w/r или wb/rb (в този случай "cars.txt" трябва да е), иначе ще излизат грешки
+   if(fp==NULL)
+   {
+       printf("ERROR: ");
+       exit(1);
+   }
+   for(int i=0; i<n; i++)
+   {
+       printf("Enter %d. car: \n", i+1);
+       printf("Enter brand of car: ");
+       scanf("%s", car[i].brand);
+       printf("Enter model of car: ");
+       scanf("%s", car[i].model);
+       printf("Enter engine capacity: ");
+       scanf("%d", &car[i].engine_capacity);
+       printf("Enter price: ");
+       scanf("%lf", &car[i].price);
+       fflush(stdin);
+       printf("Enter Y (YES) or N (NO) for registration: ");
+       scanf("%c", &car[i].registration);
+       printf("\n");
+       fprintf(fp, "%s %s %d %g %c\n", car[i].brand, car[i].model, car[i].engine_capacity, car[i].price, car[i].registration); //тук може би грешно ти ги е записвало, тъй като с оня запис май си добавил тия плюсове към адреса, не към стойността на адреса. тоя запис с cars[i] е по-лесен и по няма да имаш грешки.
+   }
+   fclose(fp);
+
+   fp = fopen("cars.txt", "a");
+   char oper[5];
+   printf("Do you want to add new car in car dealership? ");
+   scanf("%s", oper);
+   if (strcmp(oper, "YES") == 0)
+   {
+       n++; //добавям 1 към n, защото добавяме нова кола тук. така n ще ни е действителният брой коли.
+       car = (CarDealership*)realloc(car, sizeof(CarDealership) *n);
+       printf("Enter brand of car: ");
+       scanf("%s", car[n - 1].brand); //правя car[n - 1], защото искам да заделя тези стойности за последния елемент.
+       printf("Enter model of car: ");
+       scanf("%s", car[n - 1].model);
+       printf("Enter engine capacity: ");
+       scanf("%d", &car[n - 1].engine_capacity);
+       printf("Enter price: ");
+       scanf("%lf", &car[n - 1].price);
+       fflush(stdin);
+       printf("Enter Y (YES) or N (NO) for registration: ");
+       scanf("%c", &car[n - 1].registration);
+       fprintf(fp, "%s %s %d %g %c\n", car[n - 1].brand, car[n - 1].model, car[n - 1].engine_capacity, car[n - 1].price, car[n - 1].registration);
+   }
+   fclose(fp);
+
+   fp = fopen("cars.txt", "r");
+   if(fp==NULL)
+       exit(2);
+
+
+   for(int i=0; i<n; i++)
+   {
+       //сега като n го увеличихме с 1, всички записи ще излязат на екрана
+       fscanf(fp, "%s %s %d %lf %c\n", car[i].brand, car[i].model, &car[i].engine_capacity, &car[i].price, &car[i].registration);
+       printf("%s %s %d %0.2lf %c\n", car[i].brand, car[i].model, car[i].engine_capacity, car[i].price, car[i].registration); //car[i] записът няма да те подведе никога. този запис е много по-удобен, също.
+   }
+   free(car);
+
+   return 0;
+}
 
 
 //PRIMEREN IZPIT
@@ -133,118 +133,117 @@
 //Rado;47;USA;9000000;3
 
 
-//typedef struct Artist
-//{
-//    char name[21];
-//    int age;
-//    char country[21];
-//    float income;
-//    char Oscars[3];
-//}star;
-//
-//void add(star *a)
-//{
-//    fflush(stdin);
-//    printf("Enter name:\n");
-//    scanf("%[^\n]s", &a->name);
-//    printf("Enter age:\n");
-//    scanf("%d", &a->age);
-//    printf("Enter country:\n");
-//    scanf("%s", &a->country);
-//    printf("Enter income:\n");
-//    scanf("%f", &a->income);
-//    printf("Enter Oscar awards: \n");
-//    scanf("%s", &a->Oscars);
-//}
-//
-//star *return_inc(star *a, long int income, int count)
-//{
-//    star *Artist = NULL;
-//    int counter=0;
-//    int j=0;
-//    for(int i=0;i<count;i++)
-//    {
-//        if(a[i].income > income)
-//        {
-//            Artist = (star*)realloc(Artist, (++counter)*sizeof(star));
-//            Artist[j] = a[i];
-//            j++;
-//        }
-//
-//    }
-//    return Artist;
-//}
-//
-//
-//int main()
-//{
-//    int i=0,num;
-//    int count=0;
-//
-//    FILE *fp=fopen("izp.txt", "r");
-//
-//    if(fp == NULL)
-//    {
-//        printf("Error\n");
-//        exit(1);
-//    }
-//    int j=0;
-//    char inc[30];
-//    char buf[BUFSIZ];
-//    star *Artists = (star*)malloc(20*sizeof(star));
-//    while(!feof(fp))
-//    {
-//
-//        fscanf(fp, "%[^ ;]%*c %i", Artists[i].name, &Artists[i].age);
-//        fseek(fp,1,SEEK_CUR);
-//        fscanf(fp,"%[^ ;]%*c ", Artists[i].country);
-//        fscanf(fp,"%[^ ;]%*c ", inc);
-//        Artists[i].income = atof(inc);
-//
-//        fscanf(fp,"%[^ \n\0;]%*c", Artists[i].Oscars);
-//
-//        i++;
-//        count++;
-//
-//    }
-//
-//    for(i=0;i<count;i++)
-//    {
-//        printf("%s ", Artists[i].name);
-//        printf("%d ", Artists[i].age);
-//        printf("%s ", Artists[i].country);
-//        printf("%.2f ", Artists[i].income);
-//        printf("%s\n", Artists[i].Oscars);
-//    }
-//
-//
-//    while(1)
-//    {
-//        printf("Cinema star %d\n", i+1);
-//        add(&Artists[i]);
-//        printf("Enter 0 to stop\n");
-//        scanf("%d", &num);
-//        count++;
-//
-//        if(num == 0)
-//            break;
-//        else
-//            i++;
-//    }
-//    int income;
-//    printf("Enter income: ");
-//    scanf("%d", &income);
-//    star *n = return_inc(Artists, income, count);
-//    for(i=0;i<30;i++)
-//    {
-//        printf("%s %d %s %.2f %s\n", n[i].name, n[i].age, n[i].country, n[i].income, n[i].Oscars);
-//        if(n[i+1].age <1 || n[i+1].age>120)
-//            break;
-//    }
-//
-//
-//    return 0;
-//}
+typedef struct Artist
+{
+   char name[21];
+   int age;
+   char country[21];
+   float income;
+   char Oscars[3];
+}star;
+
+void add(star *a)
+{
+   fflush(stdin);
+   printf("Enter name:\n");
+   scanf("%[^\n]s", &a->name);
+   printf("Enter age:\n");
+   scanf("%d", &a->age);
+   printf("Enter country:\n");
+   scanf("%s", &a->country);
+   printf("Enter income:\n");
+   scanf("%f", &a->income);
+   printf("Enter Oscar awards: \n");
+   scanf("%s", &a->Oscars);
+}
+
+star *return_inc(star *a, long int income, int count)
+{
+   star *Artist = NULL;
+   int counter=0;
+   int j=0;
+   for(int i=0;i<count;i++)
+   {
+       if(a[i].income > income)
+       {
+           Artist = (star*)realloc(Artist, (++counter)*sizeof(star));
+           Artist[j] = a[i];
+           j++;
+       }
+
+   }
+   return Artist;
+}
+
+
+int main()
+{
+   int i = 0, num;
+   int count = 0;
+
+   FILE *fp=fopen("izp.txt", "r");
+
+   if(fp == NULL)
+   {
+       printf("Error\n");
+       exit(1);
+   }
+   int j = 0;
+   char inc[30];
+   char buf[BUFSIZ];
+   star *Artists = (star*)malloc(20*sizeof(star));
+   while(!feof(fp))
+   {
+
+       fscanf(fp, "%[^ ;]%*c %i", Artists[i].name, &Artists[i].age);
+       fseek(fp,1,SEEK_CUR);
+       fscanf(fp,"%[^ ;]%*c ", Artists[i].country);
+       fscanf(fp,"%[^ ;]%*c ", inc);
+       Artists[i].income = atof(inc);
+
+       fscanf(fp,"%[^ \n\0;]%*c", Artists[i].Oscars);
+
+       i++;
+       count++;
+
+   }
+
+   for(i=0; i<count; i++)
+   {
+       printf("%s ", Artists[i].name);
+       printf("%d ", Artists[i].age);
+       printf("%s ", Artists[i].country);
+       printf("%.2f ", Artists[i].income);
+       printf("%s\n", Artists[i].Oscars);
+   }
+
+
+   while(1)
+   {
+       printf("Cinema star %d\n", i+1);
+       add(&Artists[i]);
+       printf("Enter 0 to stop\n");
+       scanf("%d", &num);
+       count++;
+
+       if(num == 0)
+           break;
+       else
+           i++;
+   }
+   int income;
+   printf("Enter income: ");
+   scanf("%d", &income);
+   star *n = return_inc(Artists, income, count);
+   for(i=0; i<30; i++)
+   {
+       printf("%s %d %s %.2f %s\n", n[i].name, n[i].age, n[i].country, n[i].income, n[i].Oscars);
+       if(n[i+1].age <1 || n[i+1].age>120)
+           break;
+   }
+
+   return 0;
+}
 
 
 
@@ -263,7 +262,7 @@ typedef struct
 // Create a list with default values:
 void create_artists(artist *artists, int size)
 {
-    for (int i = 0; i < size; i++)
+    for (int i=0; i<size; i++)
     {
         artists[i].name = (char*) calloc(10, sizeof(char));
         artists[i].age = 0;
@@ -311,7 +310,7 @@ artist* artists_with_bigger_income(artist* artists, int size, int income)
     int new_size = 0;
     artist* new_artists = NULL;
 
-    for (int i = 0; i < size; i++)
+    for (int i=0; i<size; i++)
     {
         if (artists[i].income > income)
         {
@@ -341,7 +340,7 @@ artist* artists_with_bigger_income(artist* artists, int size, int income)
 // Helper function to display artists' data:
 void print_artists(artist* artists, int size)
 {
-    for (int i = 0; i < size; i++)
+    for (int i=0; i<size; i++)
     {
         printf("%s %d %s %d %d\n", artists[i].name,
                                    artists[i].age,
@@ -357,7 +356,10 @@ int count_file_lines(FILE* file)
     int counter = 0;
     char row[256];
     // Counter increments at the end of the line:
-    while (fgets(row, 256, file) != NULL) {counter++;}
+    while (fgets(row, 256, file) != NULL) 
+    {
+        counter++;
+    }
     rewind(file);
     return counter;
 }
@@ -391,7 +393,7 @@ void fill_artists(FILE* file, artist* artists, int counter)
 
 void free_artists(artist* artists, int size)
 {
-    for (int i = 0; i < size; i++)
+    for (int i=0; i<size; i++)
     {
         free(artists[i].name);
         free(artists[i].country);
@@ -402,7 +404,7 @@ void free_artists(artist* artists, int size)
 void free_new_artists(artist *new_artists, int size)
 {
 
-    for (int i = 0; i < size; i++)
+    for (int i=0; i<size; i++)
     {
         free(new_artists[i].name);
         free(new_artists[i].country);
