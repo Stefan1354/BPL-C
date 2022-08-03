@@ -15,95 +15,95 @@
 //данните от бинарния и текстовия файл в конзолата, за да направите сравнение за
 //правилната работа на програмата ви.
 
-//typedef struct Dealership
-//{
-//    char brand[6];
-//    char model[6];
-//    int engine;
-//    double price;
-//    char registration;
-//}deal;
-//
-//void add(deal *a)
-//{
-//
-//    printf("Enter brand: ");
-//    scanf("%s", a->brand);
-//    printf("Enter model: ");
-//    scanf("%s", a->model);
-//    printf("Enter engine volume: ");
-//    scanf("%d", &a->engine);
-//    printf("Enter price: ");
-//    scanf("%lf", &a->price);
-//    printf("Is the vehicle registrated: ");
-//    scanf("%s", a->registration);
-//
-//}
-//
-//int main()
-//{
-//    int i=0, count=0;
-//    char inp[10];
-//    char end[10]="end";
-//    deal *cars =(deal*)malloc(30*sizeof(deal));
-//    while(1)
-//    {
-//        add(&cars[i]);
-//        i++;
-//        count++;
-//        printf("If you are done type \"end\": ");
-//        scanf("%s", &inp);
-//        if(strcmp(inp, end) == 0)
-//            break;
-//
-//    }
-//    FILE *fp = fopen("scape.txt", "w");
-//    if(fp == NULL)
-//    {
-//        printf("ERROR\n");
-//        exit(1);
-//    }
-//
-//    for(i=0;i<count;i++)
-//    {
-//        fprintf(fp,"%s %s %d %.2lf %c\n", cars[i].brand, cars[i].model, cars[i].engine, cars[i].price, cars[i].registration);
-//    }
-//    fclose(fp);
-//
-//    printf("If you don't want to read from the text file type\"end\": ");
-//    scanf("%s", &inp);
-//
-//    deal *read = (deal*)malloc(count*sizeof(deal));
-//
-//    if(strcmp(inp, end) == 0)
-//        printf("Done\n");
-//    else
-//    {
-//        i=0;
-//
-//        fp = fopen("scape.txt", "r");
-//        if(fp == NULL)
-//        {
-//            printf("ERROR2");
-//            exit(2);
-//        }
-//        for(i=0;i<count;i++)
-//        {
-//            fscanf(fp,"%s %s %d %lf %s", &read[i].brand, &read[i].model, &read[i].engine, &read[i].price, &read[i].registration);
-//        }
-//        fclose(fp);
-//        for(int m=0;m<count;m++)
-//        {
-//            printf("Brand: %s ", read[m].brand);
-//            printf("Model: %s ", read[m].model);
-//            printf("Engine: %d ", read[m].engine);
-//            printf("Price: %.2lf ", read[m].price);
-//            printf("Registr: %c\n", read[m].registration);
-//        }
-//
-//    }
-//    return 0;
-//}
+typedef struct Dealership
+{
+   char brand[6];
+   char model[6];
+   int engine;
+   double price;
+   char registration;
+}deal;
+
+void add(deal *a)
+{
+
+   printf("Enter brand: ");
+   scanf("%s", a->brand);
+   printf("Enter model: ");
+   scanf("%s", a->model);
+   printf("Enter engine volume: ");
+   scanf("%d", &a->engine);
+   printf("Enter price: ");
+   scanf("%lf", &a->price);
+   printf("Is the vehicle registrated: ");
+   scanf("%s", a->registration);
+
+}
+
+int main()
+{
+   int i = 0, count = 0;
+   char inp[10];
+   char end[10] = "end";
+   deal *cars =(deal*) malloc (30*sizeof(deal));
+   while(1)
+   {
+       add(&cars[i]);
+       i++;
+       count++;
+       printf("If you are done type \"end\": ");
+       scanf("%s", &inp);
+       if(strcmp(inp, end) == 0)
+           break;
+
+   }
+   FILE *fp = fopen("scape.txt", "w");
+   if(fp == NULL)
+   {
+       printf("ERROR\n");
+       exit(1);
+   }
+
+   for(i=0; i<count; i++)
+   {
+       fprintf(fp,"%s %s %d %.2lf %c\n", cars[i].brand, cars[i].model, cars[i].engine, cars[i].price, cars[i].registration);
+   }
+   fclose(fp);
+
+   printf("If you don't want to read from the text file type\"end\": ");
+   scanf("%s", &inp);
+
+   deal *read = (deal*) malloc (count*sizeof(deal));
+
+   if(strcmp(inp, end) == 0)
+       printf("Done\n");
+   else
+   {
+       i = 0;
+
+       fp = fopen("scape.txt", "r");
+       if(fp == NULL)
+       {
+           printf("ERROR2");
+           exit(2);
+       }
+       for(i=0; i<count; i++)
+       {
+           fscanf(fp,"%s %s %d %lf %s", &read[i].brand, &read[i].model, &read[i].engine, &read[i].price, &read[i].registration);
+       }
+       fclose(fp);
+       for(int m=0; m<count; m++)
+       {
+           printf("Brand: %s ", read[m].brand);
+           printf("Model: %s ", read[m].model);
+           printf("Engine: %d ", read[m].engine);
+           printf("Price: %.2lf ", read[m].price);
+           printf("Registr: %c\n", read[m].registration);
+       }
+
+   }
+   return 0;
+}
 
 
 //Задача 1.
@@ -129,137 +129,137 @@
 //бинарен файл “in.bin”, след което ги записва в текстови файл “outTxt” и принтира
 //последователно от двата вида файла в конзолата.
 
-//FIRST WAY
+FIRST WAY
 
-//typedef struct Store_items
-//{
+typedef struct Store_items
+{
+
+   char name[31];
+   int ID;
+   char exp[11];
+   float price;
+
+}item;
+
+void add(item *a)
+{
+   fflush(stdin);
+   printf("Enter name: ");
+   scanf("%[^\n]s", a->name);
+   printf("Enter ID: ");
+   scanf("%d", &a->ID);
+   printf("Enter expire date: ");
+   scanf("%s", a->exp);
+   printf("Enter price: ");
+   scanf("%f", &a->price);
+}
+item *expire(item *a, int count, char date[30],int *p)
+{
+   item *items = NULL;
+   int j = 0;
+   int counter = 0;
+
+   for(int i=0; i<count; i++)
+   {
+       if(strcmp(a[i].exp, date) == 0)
+       {
+           items = (item*) realloc (items, (++counter)*sizeof(item));
+           items[j] = a[i];
+           j++;
+
+       }
+   }
+   *p = j;
+
+   return items;
+}
+int main()
+{
+
+   int i = 0, count = 0;
+   char inp[10];
+   char end[] = "end";
+   item *items = (item*) malloc (30*sizeof(item));
+   while(1)
+   {
+       add(&items[i]);
+       count++;
+       i++;
+       printf("To end type end: ");
+       scanf("%s", inp);
+       if(strcmp(inp, end) == 0)
+       {
+           break;
+       }
+   }
+   FILE *fp = fopen("in.bin", "wb");
+
+   for(i=0; i<count; i++)
+   {
+       if(fwrite(&items[i], sizeof(item),1,fp) != 1)
+       {
+           printf("ERROR1\n");
+           exit(1);
+       }
+   }
+   fclose(fp);
+   item *read = (item*)malloc(count*sizeof(item));
+   fp = fopen("in.bin", "rb");
+   if(fp == NULL)
+   {
+       printf("ERROR2\n");
+       exit(2);
+   }
+   int j = 0;
+   while(!feof(fp))
+   {
+       fread(&read[j], sizeof(item), 1, fp);
+       j++;
+
+   }
+   fclose(fp);
+
+//    printf(" J = %d\n", j);
+//    printf(" Count = %d\n", count);
+
+   printf("\n");
+   printf("Binary text:\n");
+   for(i=0; i<count; i++)
+   {
+       printf("NAME:%s, ID: %d, DATE: %s, PRICE: %.2f\n", read[i].name, read[i].ID, read[i].exp, read[i].price);
+   }
+
+   fp = fopen("outText.txt", "r");
+   for(i=0; i<count; i++)
+   {
+       fprintf(fp,"%s %d %s %f\n", read[i].name, read[i].ID, read[i].exp, read[i].price);
+   }
+   fclose(fp);
+   printf("\n");
+   int counter = 0;
+   char date[20];
+   printf("Enter expire date: ");
+   scanf("%s", date);
+   item *ret = expire(items,count,date,&counter);
+   printf("\n");
+   printf("Items that expire on %s: \n", date);
+   for(i=0; i<counter; i++)
+   {
+       printf("%s %d %s %.2f\n", ret[i].name, ret[i].ID, ret[i].exp, ret[i].price);
+   }
+//    char line[300];
+//    fp = fopen("outTxt.txt", "r");
 //
-//    char name[31];
-//    int ID;
-//    char exp[11];
-//    float price;
-//
-//}item;
-//
-//void add(item *a)
-//{
-//    fflush(stdin);
-//    printf("Enter name: ");
-//    scanf("%[^\n]s", a->name);
-//    printf("Enter ID: ");
-//    scanf("%d", &a->ID);
-//    printf("Enter expire date: ");
-//    scanf("%s", a->exp);
-//    printf("Enter price: ");
-//    scanf("%f", &a->price);
-//}
-//item *expire(item *a, int count, char date[30],int *p)
-//{
-//    item *items = NULL;
-//    int j=0;
-//    int counter=0;
-//
-//    for(int i=0;i<count;i++)
+//    printf("Text text:\n");
+//    for(i=0; i<count; i++)
 //    {
-//        if(strcmp(a[i].exp, date) == 0)
-//        {
-//            items = (item*)realloc(items, (++counter)*sizeof(item));
-//            items[j] = a[i];
-//            j++;
-//
-//        }
-//    }
-//    *p=j;
-//
-//    return items;
-//}
-//int main()
-//{
-//
-//    int i=0, count=0;
-//    char inp[10];
-//    char end[] = "end";
-//    item *items = (item*)malloc(30*sizeof(item));
-//    while(1)
-//    {
-//        add(&items[i]);
-//        count++;
-//        i++;
-//        printf("To end type end: ");
-//        scanf("%s", inp);
-//        if(strcmp(inp, end) == 0)
-//        {
-//            break;
-//        }
-//    }
-//    FILE *fp = fopen("in.bin", "wb");
-//
-//    for(i=0;i<count;i++)
-//    {
-//        if(fwrite(&items[i], sizeof(item),1,fp) != 1)
-//        {
-//            printf("ERROR1\n");
-//            exit(1);
-//        }
+//        fgets(line, 300, fp);
+//        printf("%s\n", line);
 //    }
 //    fclose(fp);
-//    item *read = (item*)malloc(count*sizeof(item));
-//    fp = fopen("in.bin", "rb");
-//    if(fp == NULL)
-//    {
-//        printf("ERROR2\n");
-//        exit(2);
-//    }
-//    int j=0;
-//    while(!feof(fp))
-//    {
-//        fread(&read[j],sizeof(item), 1, fp);
-//        j++;
-//
-//    }
-//    fclose(fp);
-//
-////    printf(" J = %d\n", j);
-////    printf(" Count = %d\n", count);
-//
-//    printf("\n");
-//    printf("Binary text:\n");
-//    for(i=0;i<count;i++)
-//    {
-//        printf("NAME:%s, ID: %d, DATE: %s, PRICE: %.2f\n", read[i].name, read[i].ID, read[i].exp, read[i].price);
-//    }
-//
-//    fp = fopen("outText.txt", "r");
-//    for(i=0;i<count;i++)
-//    {
-//        fprintf(fp,"%s %d %s %f\n", read[i].name, read[i].ID, read[i].exp, read[i].price);
-//    }
-//    fclose(fp);
-//    printf("\n");
-//    int counter=0;
-//    char date[20];
-//    printf("Enter expire date: ");
-//    scanf("%s", date);
-//    item *ret = expire(items,count,date,&counter);
-//    printf("\n");
-//    printf("Items that expire on %s: \n",date);
-//    for(i=0;i<counter;i++)
-//    {
-//        printf("%s %d %s %.2f\n", ret[i].name, ret[i].ID, ret[i].exp, ret[i].price);
-//    }
-////    char line[300];
-////    fp = fopen("outTxt.txt", "r");
-////
-////    printf("Text text:\n");
-////    for(i=0;i<count;i++)
-////    {
-////        fgets(line,300,fp);
-////        printf("%s\n", line);
-////    }
-////    fclose(fp);
-//
-//    return 0;
-//}
+
+   return 0;
+}
 
 //SECOND WAY
 
@@ -275,8 +275,8 @@ typedef struct
 product create_product()
 {
     product product;
-    product.name = (char*) malloc(31*sizeof(char));
-    product.expiration_date = (char*) malloc(11*sizeof(char));
+    product.name = (char*) malloc (31*sizeof(char));
+    product.expiration_date = (char*) malloc (11*sizeof(char));
     product.ID = 0;
     product.price = 0;
 
@@ -285,7 +285,7 @@ product create_product()
 
 void create_product_list(product* product_list, int size)
 {
-    for (int i = 0; i < size; i++)
+    for (int i=0; i<size; i++)
         product_list[i] = create_product();
 }
 
@@ -298,7 +298,7 @@ void create_binary_file(product* product_list, int size)
         exit(1);
     }
 
-    for (int i = 0; i < size; i++)
+    for (int i=0; i<size; i++)
         fwrite((product_list + i), sizeof(product), 1, file_pointer);
     fclose(file_pointer);
 }
@@ -321,7 +321,7 @@ product* expiration_date_products(product* product_list, int size, char* expirat
     int new_size = 0;
     product* new_product_list = NULL;
 
-    for (int i = 0; i < size; i++)
+    for (int i=0; i<size; i++)
     {
         if (strcmp(product_list[i].expiration_date, expiration_date) == 0)
         {
@@ -349,7 +349,7 @@ product* expiration_date_products(product* product_list, int size, char* expirat
 
 void print_products(product* product_list, int size)
 {
-    for (int i = 0; i < size; i++)
+    for (int i=0; i<size; i++)
     {
         printf("%s\n", product_list[i].name);
         printf("%d\n", product_list[i].ID);
@@ -404,7 +404,8 @@ void save_product_to_text_file(product* product)
         fprintf(file_pointer, "Name = %s\n ID = %d\n Expiration Date = %s\n Price = %f\n", product->name,
                                                                                            product -> ID,
                                                                                            product->expiration_date,
-                                                                                           product->price);}
+                                                                                           product->price);
+    }
     fclose(file_pointer);
 }
 
@@ -471,7 +472,7 @@ void print_from_text()
 
 void free_products(product* product_list, int size)
 {
-    for (int i = 0; i < size; i++)
+    for (int i=0; i<size; i++)
     {
         free(product_list[i].name);
         free(product_list[i].expiration_date);
@@ -482,7 +483,7 @@ void free_products(product* product_list, int size)
 
 int main()
 {
-    product* product_list = (product*) malloc(2*sizeof(product));
+    product* product_list = (product*) malloc (2*sizeof(product));
     create_product_list(product_list, 2);
 
     strcpy(product_list[0].name, "Milk");
@@ -512,4 +513,3 @@ int main()
 
     return 0;
 }
-
