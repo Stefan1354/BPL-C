@@ -32,7 +32,7 @@ int main()
    CarDealership *car = (CarDealership*)malloc(n*sizeof(CarDealership));
 
    FILE *fp;
-   fp = fopen("cars.txt", "w"); //файлът трябва да завършва с .txt или с .bin, зависи от режима дали е w/r или wb/rb (в този случай "cars.txt" трябва да е), иначе ще излизат грешки
+   fp = fopen("cars.txt", "w");   //файлът трябва да завършва с .txt или с .bin, зависи от режима дали е w/r или wb/rb (в този случай "cars.txt" трябва да е), иначе ще излизат грешки
    if(fp==NULL)
    {
        printf("ERROR: ");
@@ -53,7 +53,7 @@ int main()
        printf("Enter Y (YES) or N (NO) for registration: ");
        scanf("%c", &car[i].registration);
        printf("\n");
-       fprintf(fp, "%s %s %d %g %c\n", car[i].brand, car[i].model, car[i].engine_capacity, car[i].price, car[i].registration); //тук може би грешно ти ги е записвало, тъй като с оня запис май си добавил тия плюсове към адреса, не към стойността на адреса. тоя запис с cars[i] е по-лесен и по няма да имаш грешки.
+       fprintf(fp, "%s %s %d %g %c\n", car[i].brand, car[i].model, car[i].engine_capacity, car[i].price, car[i].registration);   //тук може би грешно ти ги е записвало, тъй като с оня запис май си добавил тия плюсове към адреса, не към стойността на адреса. тоя запис с cars[i] е по-лесен и по няма да имаш грешки.
    }
    fclose(fp);
 
@@ -66,7 +66,7 @@ int main()
        n++; //добавям 1 към n, защото добавяме нова кола тук. така n ще ни е действителният брой коли.
        car = (CarDealership*)realloc(car, sizeof(CarDealership) *n);
        printf("Enter brand of car: ");
-       scanf("%s", car[n - 1].brand); //правя car[n - 1], защото искам да заделя тези стойности за последния елемент.
+       scanf("%s", car[n - 1].brand);   //правя car[n - 1], защото искам да заделя тези стойности за последния елемент.
        printf("Enter model of car: ");
        scanf("%s", car[n - 1].model);
        printf("Enter engine capacity: ");
@@ -89,7 +89,7 @@ int main()
    {
        //сега като n го увеличихме с 1, всички записи ще излязат на екрана
        fscanf(fp, "%s %s %d %lf %c\n", car[i].brand, car[i].model, &car[i].engine_capacity, &car[i].price, &car[i].registration);
-       printf("%s %s %d %0.2lf %c\n", car[i].brand, car[i].model, car[i].engine_capacity, car[i].price, car[i].registration); //car[i] записът няма да те подведе никога. този запис е много по-удобен, също.
+       printf("%s %s %d %0.2lf %c\n", car[i].brand, car[i].model, car[i].engine_capacity, car[i].price, car[i].registration); 
    }
    free(car);
 
